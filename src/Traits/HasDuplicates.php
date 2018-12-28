@@ -71,7 +71,7 @@ trait HasDuplicates
                 }
 
                 foreach ($this->getRelationsForDuplication() as $relation => $attributes) {
-                    if (RelationHelper::isDirect($attributes['type'])) {
+                    if (RelationHelper::isChild($attributes['type'])) {
                         $this->duplicateDirectRelation($model, $relation);
                     }
 
