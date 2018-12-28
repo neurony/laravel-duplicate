@@ -3,11 +3,11 @@
 namespace Zbiller\Duplicate\Tests;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Foundation\Application;
-use Orchestra\Testbench\TestCase as Orchestra;
+use Zbiller\Duplicate\Tests\Models\Tag;
 use Zbiller\Duplicate\Tests\Models\Post;
 use Zbiller\Duplicate\Tests\Models\Review;
-use Zbiller\Duplicate\Tests\Models\Tag;
+use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Contracts\Foundation\Application;
 
 abstract class TestCase extends Orchestra
 {
@@ -104,7 +104,7 @@ abstract class TestCase extends Orchestra
         // create 3 tags
         for ($i = 1; $i <= 3; $i++) {
             $this->tags[] = Tag::create([
-                'name' => 'Tag test name ' . $i
+                'name' => 'Tag test name '.$i,
             ]);
         }
 

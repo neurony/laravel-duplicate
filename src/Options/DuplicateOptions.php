@@ -62,7 +62,7 @@ class DuplicateOptions
         }
 
         throw new Exception(
-            'The property "' . $name . '" does not exist in class "' . static::class . '"'
+            'The property "'.$name.'" does not exist in class "'.static::class.'"'
         );
     }
 
@@ -71,7 +71,7 @@ class DuplicateOptions
      *
      * @return DuplicateOptions
      */
-    public static function instance(): DuplicateOptions
+    public static function instance(): self
     {
         return new static();
     }
@@ -82,7 +82,7 @@ class DuplicateOptions
      * @param array|string $columns
      * @return DuplicateOptions
      */
-    public function excludeColumns(...$columns): DuplicateOptions
+    public function excludeColumns(...$columns): self
     {
         $this->excludedColumns = array_flatten($columns);
 
@@ -95,7 +95,7 @@ class DuplicateOptions
      * @param array|string $columns
      * @return DuplicateOptions
      */
-    public function uniqueColumns(...$columns): DuplicateOptions
+    public function uniqueColumns(...$columns): self
     {
         $this->uniqueColumns = array_flatten($columns);
 
@@ -108,7 +108,7 @@ class DuplicateOptions
      * @param array|string $relations
      * @return DuplicateOptions
      */
-    public function excludeRelations(...$relations): DuplicateOptions
+    public function excludeRelations(...$relations): self
     {
         $this->excludedRelations = array_flatten($relations);
 
@@ -124,7 +124,7 @@ class DuplicateOptions
      * @param array $columns
      * @return DuplicateOptions
      */
-    public function excludeRelationColumns(array $columns = []): DuplicateOptions
+    public function excludeRelationColumns(array $columns = []): self
     {
         $this->excludedRelationColumns = $columns;
 
@@ -140,7 +140,7 @@ class DuplicateOptions
      * @param array $columns
      * @return DuplicateOptions
      */
-    public function uniqueRelationColumns(array $columns = []): DuplicateOptions
+    public function uniqueRelationColumns(array $columns = []): self
     {
         $this->uniqueRelationColumns = $columns;
 
@@ -152,7 +152,7 @@ class DuplicateOptions
      *
      * @return DuplicateOptions
      */
-    public function disableDeepDuplication(): DuplicateOptions
+    public function disableDeepDuplication(): self
     {
         $this->shouldDuplicateDeeply = false;
 
