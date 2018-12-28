@@ -2,11 +2,11 @@
 
 namespace Zbiller\Duplicate\Tests;
 
-use Zbiller\Duplicate\Options\DuplicateOptions;
-use Zbiller\Duplicate\Tests\Models\Comment;
+use Zbiller\Duplicate\Tests\Models\Tag;
 use Zbiller\Duplicate\Tests\Models\Post;
 use Zbiller\Duplicate\Tests\Models\Review;
-use Zbiller\Duplicate\Tests\Models\Tag;
+use Zbiller\Duplicate\Tests\Models\Comment;
+use Zbiller\Duplicate\Options\DuplicateOptions;
 
 class HasSlugTest extends TestCase
 {
@@ -39,7 +39,7 @@ class HasSlugTest extends TestCase
         for ($i = 1; $i <= 5; $i++) {
             $model = $this->post->saveAsDuplicate();
 
-            $this->assertEquals($this->post->title . ' (' . $i . ')', $model->title);
+            $this->assertEquals($this->post->title.' ('.$i.')', $model->title);
         }
     }
 
@@ -119,7 +119,7 @@ class HasSlugTest extends TestCase
             public function getDuplicateOptions() : DuplicateOptions
             {
                 return parent::getDuplicateOptions()->uniqueRelationColumns([
-                    'review' => ['name'], 'comments' => ['subject']
+                    'review' => ['name'], 'comments' => ['subject'],
                 ]);
             }
         };
@@ -132,10 +132,10 @@ class HasSlugTest extends TestCase
             $model = $this->post->saveAsDuplicate();
             $model = $model->fresh();
 
-            $this->assertEquals($this->post->review->name . ' (' . $i . ')', $model->review->name);
+            $this->assertEquals($this->post->review->name.' ('.$i.')', $model->review->name);
 
             foreach ($model->comments as $index => $comment) {
-                $this->assertEquals($this->comments[$index]->subject . ' (' . $count . ')', $comment->subject);
+                $this->assertEquals($this->comments[$index]->subject.' ('.$count.')', $comment->subject);
 
                 $count++;
             }
@@ -149,7 +149,7 @@ class HasSlugTest extends TestCase
             public function getDuplicateOptions() : DuplicateOptions
             {
                 return parent::getDuplicateOptions()->excludeRelationColumns([
-                    'review' => ['content', 'rating'], 'comments' => ['comment', 'votes']
+                    'review' => ['content', 'rating'], 'comments' => ['comment', 'votes'],
                 ]);
             }
         };

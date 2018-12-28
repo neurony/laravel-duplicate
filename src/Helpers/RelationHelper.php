@@ -2,19 +2,19 @@
 
 namespace Zbiller\Duplicate\Helpers;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use ReflectionException;
-use ReflectionMethod;
 use SplFileObject;
+use ReflectionMethod;
+use ReflectionException;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class RelationHelper
 {
@@ -39,9 +39,9 @@ class RelationHelper
         'morphOne',
         'morphMany',
         'morphTo',
-        'morphToMany'
+        'morphToMany',
     ];
-    
+
     /**
      * All available Laravel's direct relations.
      *
@@ -187,7 +187,7 @@ class RelationHelper
     public static function getModelRelations(Model $model): array
     {
         foreach (get_class_methods($model) as $method) {
-            if (!method_exists(Model::class, $method)) {
+            if (! method_exists(Model::class, $method)) {
                 $reflection = new ReflectionMethod($model, $method);
                 $file = new SplFileObject($reflection->getFileName());
                 $code = '';
@@ -204,7 +204,7 @@ class RelationHelper
                 $code = substr($code, $begin, strrpos($code, '}') - $begin + 1);
 
                 foreach (static::$relationTypes as $type) {
-                    if (stripos($code, '$this->' . $type . '(')) {
+                    if (stripos($code, '$this->'.$type.'(')) {
                         $relation = $model->$method();
 
                         if ($relation instanceof Relation) {
