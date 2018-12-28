@@ -3,8 +3,8 @@
 namespace Zbiller\Duplicate\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Duplicate\Options\DuplicateOptions;
 use Zbiller\Duplicate\Traits\HasDuplicates;
+use Zbiller\Duplicate\Options\DuplicateOptions;
 
 class Post extends Model
 {

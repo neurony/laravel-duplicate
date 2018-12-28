@@ -4,8 +4,8 @@ namespace Zbiller\Duplicate\Traits;
 
 use Closure;
 use Exception;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 use Zbiller\Duplicate\Helpers\RelationHelper;
 use Zbiller\Duplicate\Options\DuplicateOptions;
 
@@ -160,7 +160,7 @@ trait HasDuplicates
         $excluded = $this->duplicateOptions->excludedRelations ?: [];
 
         foreach (RelationHelper::getModelRelations($this) as $relation => $attributes) {
-            if (!in_array($relation, $excluded)) {
+            if (! in_array($relation, $excluded)) {
                 $relations[$relation] = $attributes;
             }
         }
@@ -181,11 +181,11 @@ trait HasDuplicates
         if ($this->usesTimestamps()) {
             $except = array_merge($except, [
                 $this->getCreatedAtColumn(),
-                $this->getUpdatedAtColumn()
+                $this->getUpdatedAtColumn(),
             ]);
         }
 
-        if ($excluded && is_array($excluded) && !empty($excluded)) {
+        if ($excluded && is_array($excluded) && ! empty($excluded)) {
             $except = array_merge($except, $excluded);
         }
 
@@ -203,7 +203,7 @@ trait HasDuplicates
     {
         $unique = $this->duplicateOptions->uniqueColumns;
 
-        if (!$unique || !is_array($unique) || empty($unique)) {
+        if (! $unique || ! is_array($unique) || empty($unique)) {
             return $model;
         }
 
@@ -212,7 +212,7 @@ trait HasDuplicates
             $original = $value = $model->{$column};
 
             while (static::withoutGlobalScopes()->where($column, $value)->first()) {
-                $value = $original . ' (' . $i++ . ')';
+                $value = $original.' ('.$i++.')';
 
                 $model->{$column} = $value;
             }
@@ -233,7 +233,7 @@ trait HasDuplicates
         $attributes = null;
         $excluded = $this->duplicateOptions->excludedRelationColumns;
 
-        if ($excluded && is_array($excluded) && !empty($excluded)) {
+        if ($excluded && is_array($excluded) && ! empty($excluded)) {
             if (array_key_exists($relation, $excluded)) {
                 $attributes = $excluded[$relation];
             }
@@ -254,7 +254,7 @@ trait HasDuplicates
     {
         $unique = $this->duplicateOptions->uniqueRelationColumns;
 
-        if (!$unique || !is_array($unique) || empty($unique)) {
+        if (! $unique || ! is_array($unique) || empty($unique)) {
             return $model;
         }
 
@@ -264,7 +264,7 @@ trait HasDuplicates
                 $original = $value = $model->{$column};
 
                 while ($model->where($column, $value)->first()) {
-                    $value = $original . ' (' . $i++ . ')';
+                    $value = $original.' ('.$i++.')';
 
                     $model->{$column} = $value;
                 }
