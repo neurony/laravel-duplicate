@@ -4,6 +4,7 @@ namespace Neurony\Duplicate\Traits;
 
 use Closure;
 use Exception;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Neurony\Duplicate\Helpers\RelationHelper;
@@ -285,7 +286,7 @@ trait HasDuplicates
     {
         $pivot = $model->pivot;
 
-        return array_except($pivot->getAttributes(), [
+        return Arr::except($pivot->getAttributes(), [
             $pivot->getKeyName(),
             $pivot->getForeignKey(),
             $pivot->getOtherKey(),

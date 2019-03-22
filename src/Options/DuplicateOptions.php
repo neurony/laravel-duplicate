@@ -3,6 +3,7 @@
 namespace Neurony\Duplicate\Options;
 
 use Exception;
+use Illuminate\Support\Arr;
 
 class DuplicateOptions
 {
@@ -84,7 +85,7 @@ class DuplicateOptions
      */
     public function excludeColumns(...$columns): self
     {
-        $this->excludedColumns = array_flatten($columns);
+        $this->excludedColumns = Arr::flatten($columns);
 
         return $this;
     }
@@ -97,7 +98,7 @@ class DuplicateOptions
      */
     public function uniqueColumns(...$columns): self
     {
-        $this->uniqueColumns = array_flatten($columns);
+        $this->uniqueColumns = Arr::flatten($columns);
 
         return $this;
     }
@@ -110,7 +111,7 @@ class DuplicateOptions
      */
     public function excludeRelations(...$relations): self
     {
-        $this->excludedRelations = array_flatten($relations);
+        $this->excludedRelations = Arr::flatten($relations);
 
         return $this;
     }
