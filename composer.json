@@ -1,10 +1,12 @@
 {
-    "name": "zbiller/laravel-duplicate",
+    "name": "neurony/laravel-duplicate",
     "description": "Duplicate any Eloquent model along with its underlying relationships",
     "license": "MIT",
     "keywords": [
         "laravel",
         "duplicate",
+        "replicate",
+        "copy",
         "eloquent",
         "model",
         "relations"
@@ -29,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Zbiller\\Duplicate\\": "src/"
+            "Neurony\\Duplicate\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zbiller\\Duplicate\\Tests\\": "tests"
+            "Neurony\\Duplicate\\Tests\\": "tests"
         },
         "classmap": [
             "tests/TestCase.php"

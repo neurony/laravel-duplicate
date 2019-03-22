@@ -1,10 +1,10 @@
 <?php
 
-namespace Zbiller\Duplicate\Tests\Models;
+namespace Neurony\Duplicate\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Duplicate\Traits\HasDuplicates;
-use Zbiller\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Traits\HasDuplicates;
+use Neurony\Duplicate\Options\DuplicateOptions;
 
 class Post extends Model
 {

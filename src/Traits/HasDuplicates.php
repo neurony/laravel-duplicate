@@ -1,19 +1,19 @@
 <?php
 
-namespace Zbiller\Duplicate\Traits;
+namespace Neurony\Duplicate\Traits;
 
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Duplicate\Helpers\RelationHelper;
-use Zbiller\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Helpers\RelationHelper;
+use Neurony\Duplicate\Options\DuplicateOptions;
 
 trait HasDuplicates
 {
     /**
      * The container for all the options necessary for this trait.
-     * Options can be viewed in the Zbiller\Duplicate\Options\DuplicateOptions file.
+     * Options can be viewed in the Neurony\Duplicate\Options\DuplicateOptions file.
      *
      * @var DuplicateOptions
      */

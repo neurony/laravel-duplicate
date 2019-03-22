@@ -1,6 +1,6 @@
 <?php
 
-namespace Zbiller\Duplicate\Helpers;
+namespace Neurony\Duplicate\Helpers;
 
 use SplFileObject;
 use ReflectionMethod;

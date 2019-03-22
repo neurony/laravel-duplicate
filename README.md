@@ -23,14 +23,14 @@ Relationship types that can and will make sense to be duplicated: `hasOne`, `mor
 Install the package via Composer:
 
 ```
-composer require zbiller/laravel-duplicate
+composer require neurony/laravel-duplicate
 ```
 
 # Usage
 
 ### Step 1
 
-Your Eloquent models should use the `Zbiller\Duplicate\Traits\HasDuplicates` trait and the `Zbiller\Duplicate\Options\DuplicateOptions` class.   
+Your Eloquent models should use the `Neurony\Duplicate\Traits\HasDuplicates` trait and the `Neurony\Duplicate\Options\DuplicateOptions` class.   
 
 The trait contains an abstract method `getDuplicateOptions()` that you must implement yourself.   
 
@@ -42,8 +42,8 @@ Here's an example of how to implement the trait:
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Duplicate\Options\DuplicateOptions;
-use Zbiller\Duplicate\Traits\HasDuplicates;
+use Neurony\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Traits\HasDuplicates;
 
 class YourModel extends Model
 {
@@ -63,7 +63,7 @@ class YourModel extends Model
 
 ### Step 2
 
-Once you've used the `Zbiller\Duplicate\Traits\HasDuplicates` trait in your Eloquent models, you can duplicate model records by using the `saveAsDuplicate()` method present on that trait.
+Once you've used the `Neurony\Duplicate\Traits\HasDuplicates` trait in your Eloquent models, you can duplicate model records by using the `saveAsDuplicate()` method present on that trait.
 
 ```php
 $model = YourModel::find($id);
@@ -217,8 +217,8 @@ You can implement these events in your Eloquent models as you would implement an
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Zbiller\Duplicate\Options\DuplicateOptions;
-use Zbiller\Duplicate\Traits\HasDuplicates;
+use Neurony\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Traits\HasDuplicates;
 
 class YourModel extends Model
 {
@@ -254,9 +254,14 @@ class YourModel extends Model
 }
 ```
 
+# Credits
+
+- [Andrei Badea](https://github.com/zbiller)
+- [All Contributors](../../contributors)
+
 # Security
 
-If you discover any security related issues, please email zbiller@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email andrei.badea@neurony.ro instead of using the issue tracker.
 
 # License
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Zbiller\Duplicate\Tests;
+namespace Neurony\Duplicate\Tests;
 
-use Zbiller\Duplicate\Tests\Models\Tag;
-use Zbiller\Duplicate\Tests\Models\Post;
-use Zbiller\Duplicate\Tests\Models\Review;
-use Zbiller\Duplicate\Tests\Models\Comment;
-use Zbiller\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Tests\Models\Tag;
+use Neurony\Duplicate\Tests\Models\Post;
+use Neurony\Duplicate\Tests\Models\Review;
+use Neurony\Duplicate\Tests\Models\Comment;
+use Neurony\Duplicate\Options\DuplicateOptions;
 
 class HasSlugTest extends TestCase
 {

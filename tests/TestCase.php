@@ -1,11 +1,11 @@
 <?php
 
-namespace Zbiller\Duplicate\Tests;
+namespace Neurony\Duplicate\Tests;
 
 use Carbon\Carbon;
-use Zbiller\Duplicate\Tests\Models\Tag;
-use Zbiller\Duplicate\Tests\Models\Post;
-use Zbiller\Duplicate\Tests\Models\Review;
+use Neurony\Duplicate\Tests\Models\Tag;
+use Neurony\Duplicate\Tests\Models\Post;
+use Neurony\Duplicate\Tests\Models\Review;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Contracts\Foundation\Application;
 
