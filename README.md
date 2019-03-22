@@ -1,10 +1,8 @@
 # Duplicate any Eloquent model along with its relationships   
 
-[![Build Status](https://travis-ci.org/zbiller/laravel-duplicate.svg?branch=master)](https://travis-ci.org/zbiller/laravel-duplicate)
+[![Build Status](https://travis-ci.org/Neurony/laravel-duplicate.svg?branch=master)](https://travis-ci.org/Neurony/laravel-duplicate)
 [![StyleCI](https://github.styleci.io/repos/163345339/shield?branch=master)](https://github.styleci.io/repos/163345339)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zbiller/laravel-duplicate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zbiller/laravel-duplicate/?branch=master)
-
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Neurony/laravel-duplicate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Neurony/laravel-duplicate/?branch=master)
 
 - [Overview](#overview)   
 - [Installation](#installation)   
