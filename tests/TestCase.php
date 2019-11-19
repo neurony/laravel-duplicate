@@ -3,11 +3,11 @@
 namespace Neurony\Duplicate\Tests;
 
 use Carbon\Carbon;
-use Neurony\Duplicate\Tests\Models\Tag;
+use Illuminate\Contracts\Foundation\Application;
 use Neurony\Duplicate\Tests\Models\Post;
 use Neurony\Duplicate\Tests\Models\Review;
+use Neurony\Duplicate\Tests\Models\Tag;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Contracts\Foundation\Application;
 
 abstract class TestCase extends Orchestra
 {
