@@ -3,8 +3,8 @@
 namespace Neurony\Duplicate\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Neurony\Duplicate\Traits\HasDuplicates;
 use Neurony\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Traits\HasDuplicates;
 
 class Post extends Model
 {

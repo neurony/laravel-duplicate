@@ -2,13 +2,13 @@
 
 namespace Neurony\Duplicate\Tests;
 
-use Neurony\Duplicate\Tests\Models\Tag;
+use Neurony\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Tests\Models\Comment;
 use Neurony\Duplicate\Tests\Models\Post;
 use Neurony\Duplicate\Tests\Models\Review;
-use Neurony\Duplicate\Tests\Models\Comment;
-use Neurony\Duplicate\Options\DuplicateOptions;
+use Neurony\Duplicate\Tests\Models\Tag;
 
-class HasSlugTest extends TestCase
+class HasDuplicatesTest extends TestCase
 {
     /** @test */
     public function it_duplicates_a_model_instance()
