@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-duplicate` will be documented in this file
 
+## 3.0.0 - 2020/10/06
+
+- Support Laravel 7.x
+
 ## 3.0.0 - 2019/13/11
 
 - Support Laravel 6.0
