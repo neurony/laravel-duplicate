@@ -28,7 +28,7 @@ class HasDuplicatesTest extends TestCase
     public function it_can_save_unique_columns_when_duplicating_a_model_instance()
     {
         $model = new class extends Post {
-            public function getDuplicateOptions() : DuplicateOptions
+            public function getDuplicateOptions(): DuplicateOptions
             {
                 return parent::getDuplicateOptions()->uniqueColumns('title');
             }
@@ -47,7 +47,7 @@ class HasDuplicatesTest extends TestCase
     public function it_can_exclude_columns_when_duplicating_a_model_instance()
     {
         $model = new class extends Post {
-            public function getDuplicateOptions() : DuplicateOptions
+            public function getDuplicateOptions(): DuplicateOptions
             {
                 return parent::getDuplicateOptions()->excludeColumns('views', 'approved', 'published_at');
             }
@@ -116,7 +116,7 @@ class HasDuplicatesTest extends TestCase
     public function it_can_save_unique_columns_when_duplicating_a_relation_of_the_model_instance()
     {
         $model = new class extends Post {
-            public function getDuplicateOptions() : DuplicateOptions
+            public function getDuplicateOptions(): DuplicateOptions
             {
                 return parent::getDuplicateOptions()->uniqueRelationColumns([
                     'review' => ['name'], 'comments' => ['subject'],
@@ -146,7 +146,7 @@ class HasDuplicatesTest extends TestCase
     public function it_can_exclude_columns_when_duplicating_a_relation_of_the_model_instance()
     {
         $model = new class extends Post {
-            public function getDuplicateOptions() : DuplicateOptions
+            public function getDuplicateOptions(): DuplicateOptions
             {
                 return parent::getDuplicateOptions()->excludeRelationColumns([
                     'review' => ['content', 'rating'], 'comments' => ['comment', 'votes'],
@@ -174,7 +174,7 @@ class HasDuplicatesTest extends TestCase
     public function it_can_duplicate_only_the_targeted_model_instance_without_any_relations()
     {
         $model = new class extends Post {
-            public function getDuplicateOptions() : DuplicateOptions
+            public function getDuplicateOptions(): DuplicateOptions
             {
                 return parent::getDuplicateOptions()->disableDeepDuplication();
             }
