@@ -1,4 +1,18 @@
-# Duplicate any Eloquent model along with its relationships   
+# Package discontinued! Check out VARBOX.IO instead.
+
+Unfortunately this package is now discontinued.   
+Please check out [Varbox](https://varbox.io) (Laravel Admin Panel) for this functionality and much more.
+
+- Buy: [https://varbox.io/buy](https://varbox.io/buy)
+- Docs: [https://varbox.io/docs](https://varbox.io/docs)
+- Demo: [https://demo.varbox.test/admin](https://demo.varbox.test/admin)
+- Repo [https://github.com/VarboxInternational/varbox](https://github.com/VarboxInternational/varbox)
+
+Thank you! 
+
+---
+
+### Duplicate any Eloquent model along with its relationships   
 
 [![Build Status](https://travis-ci.org/Neurony/laravel-duplicate.svg?branch=master)](https://travis-ci.org/Neurony/laravel-duplicate)
 [![StyleCI](https://github.styleci.io/repos/163345339/shield?branch=master)](https://github.styleci.io/repos/163345339)
@@ -10,13 +24,13 @@
 - [Customisations](#customisations)   
 - [Events](#events)   
 
-# Overview
+### Overview
 
 This package allows you to duplicate any Eloquent model record along with its underlying relationships.    
    
 Relationship types that can and will make sense to be duplicated: `hasOne`, `morphOne`, `hasMany`, `morphMany`, `belongsToMany`, `morphToMany`   
 
-# Installation
+### Installation
 
 Install the package via Composer:
 
@@ -24,9 +38,9 @@ Install the package via Composer:
 composer require neurony/laravel-duplicate
 ```
 
-# Usage
+### Usage
 
-### Step 1
+##### Step 1
 
 Your Eloquent models should use the `Neurony\Duplicate\Traits\HasDuplicates` trait and the `Neurony\Duplicate\Options\DuplicateOptions` class.   
 
@@ -59,7 +73,7 @@ class YourModel extends Model
 }
 ```
 
-### Step 2
+##### Step 2
 
 Once you've used the `Neurony\Duplicate\Traits\HasDuplicates` trait in your Eloquent models, you can duplicate model records by using the `saveAsDuplicate()` method present on that trait.
 
@@ -69,9 +83,9 @@ $model = YourModel::find($id);
 $duplicatedModel = $model->saveAsDuplicate(); // returns the newly duplicated model instance
 ```
 
-# Customisations
+### Customisations
 
-### Exclude certain columns
+##### Exclude certain columns
 
 When duplicating a model, you can exclude certain columns from being duplicated by using the `excludeColumns()` method in your definition of the `getDuplicateOptions()` method.   
    
@@ -90,7 +104,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-### Specify unique columns
+##### Specify unique columns
 
 When duplicating a model, you can save certain columns in an unique format by using the `uniqueColumns()` method in your definition of the `getDuplicateOptions()` method.   
    
@@ -110,7 +124,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-### Exclude entire relations
+##### Exclude entire relations
 
 By default, when duplicating a model, all of its "child" relations (see [Overview](#overview)) are also duplicated along with it.   
    
@@ -131,7 +145,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-### Exclude certain columns from certain relations
+##### Exclude certain columns from certain relations
 
 When duplicating a model, you can exclude certain columns of its "child" relations from being duplicated by using the `excludeRelationColumns()` method in your definition of the `getDuplicateOptions()` method.   
    
@@ -157,7 +171,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-### Specify unique columns for certain relations
+##### Specify unique columns for certain relations
 
 When duplicating a model, you can save certain columns of its "child" relations in an unique format by using the `uniqueRelationColumns()` method in your definition of the `getDuplicateOptions()` method.   
    
@@ -184,7 +198,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-### Duplicate only the targeted model
+##### Duplicate only the targeted model
 
 If you only want to duplicate your targeted model without duplicating any relations whatsoever, you can specify this by using the `disableDeepDuplication()` method in your definition of the `getDuplicateOptions()` method.   
    
@@ -203,7 +217,7 @@ public function getDuplicateOptions() : DuplicateOptions
 }
 ```
 
-# Events
+### Events
 
 The duplicate functionality comes packed with two Eloquent events: `duplicating` and `duplicated`   
    
@@ -252,23 +266,23 @@ class YourModel extends Model
 }
 ```
 
-# Credits
+### Credits
 
 - [Andrei Badea](https://github.com/zbiller)
 - [All Contributors](../../contributors)
 
-# Security
+### Security
 
 If you discover any security related issues, please email andrei.badea@neurony.ro instead of using the issue tracker.
 
-# License
+### License
 
 The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
 
-# Changelog
+### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-# Contributing
+### Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
