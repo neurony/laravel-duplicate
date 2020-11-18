@@ -1,50 +1,36 @@
-# Package discontinued! Check out VARBOX.IO instead.
-
-Unfortunately this package is now discontinued.   
-Please check out [Varbox](https://varbox.io) (Laravel Admin Panel) for this functionality and much more.
-
-- Buy: [https://varbox.io/buy](https://varbox.io/buy)
-- Docs: [https://varbox.io/docs](https://varbox.io/docs)
-- Demo: [https://demo.varbox.test/admin](https://demo.varbox.test/admin)
-- Repo [https://github.com/VarboxInternational/varbox](https://github.com/VarboxInternational/varbox)
-
-Thank you! 
+### This is fork from Neurony/laravel-duplicate to make it works with new Laravel 8.x
 
 ---
 
-### Duplicate any Eloquent model along with its relationships   
+### Duplicate any Eloquent model along with its relationships
 
-[![Build Status](https://travis-ci.org/Neurony/laravel-duplicate.svg?branch=master)](https://travis-ci.org/Neurony/laravel-duplicate)
-[![StyleCI](https://github.styleci.io/repos/163345339/shield?branch=master)](https://github.styleci.io/repos/163345339)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Neurony/laravel-duplicate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Neurony/laravel-duplicate/?branch=master)
-
-- [Overview](#overview)   
-- [Installation](#installation)   
-- [Usage](#usage)   
-- [Customisations](#customisations)   
-- [Events](#events)   
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customisations](#customisations)
+- [Events](#events)
 
 ### Overview
 
-This package allows you to duplicate any Eloquent model record along with its underlying relationships.    
-   
-Relationship types that can and will make sense to be duplicated: `hasOne`, `morphOne`, `hasMany`, `morphMany`, `belongsToMany`, `morphToMany`   
+This package allows you to duplicate any Eloquent model record along with its underlying relationships.
+
+Relationship types that can and will make sense to be duplicated: `hasOne`, `morphOne`, `hasMany`, `morphMany`, `belongsToMany`, `morphToMany`
 
 ### Installation
 
 Install the package via Composer:
 
 ```
-composer require neurony/laravel-duplicate
+composer require coliving/laravel-duplicate
 ```
 
 ### Usage
 
 ##### Step 1
 
-Your Eloquent models should use the `Neurony\Duplicate\Traits\HasDuplicates` trait and the `Neurony\Duplicate\Options\DuplicateOptions` class.   
+Your Eloquent models should use the `Neurony\Duplicate\Traits\HasDuplicates` trait and the `Neurony\Duplicate\Options\DuplicateOptions` class.
 
-The trait contains an abstract method `getDuplicateOptions()` that you must implement yourself.   
+The trait contains an abstract method `getDuplicateOptions()` that you must implement yourself.
 
 Here's an example of how to implement the trait:
 
@@ -60,7 +46,7 @@ use Neurony\Duplicate\Traits\HasDuplicates;
 class YourModel extends Model
 {
     use HasDuplicates;
-    
+
     /**
      * Get the options for duplicating the model.
      *
@@ -87,8 +73,8 @@ $duplicatedModel = $model->saveAsDuplicate(); // returns the newly duplicated mo
 
 ##### Exclude certain columns
 
-When duplicating a model, you can exclude certain columns from being duplicated by using the `excludeColumns()` method in your definition of the `getDuplicateOptions()` method.   
-   
+When duplicating a model, you can exclude certain columns from being duplicated by using the `excludeColumns()` method in your definition of the `getDuplicateOptions()` method.
+
 The fields specified in the `excludeColumns()` method will be saved with their default value (`null`, `false`, `0`, etc.)
 
 ```php
@@ -106,9 +92,9 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ##### Specify unique columns
 
-When duplicating a model, you can save certain columns in an unique format by using the `uniqueColumns()` method in your definition of the `getDuplicateOptions()` method.   
-   
-The fields specified in the `uniqueColumns()` method will be saved in a unique format by appending `(n)` at the end.   
+When duplicating a model, you can save certain columns in an unique format by using the `uniqueColumns()` method in your definition of the `getDuplicateOptions()` method.
+
+The fields specified in the `uniqueColumns()` method will be saved in a unique format by appending `(n)` at the end.
 Example: **original name (1)**, **original name (2)**
 
 ```php
@@ -126,10 +112,10 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ##### Exclude entire relations
 
-By default, when duplicating a model, all of its "child" relations (see [Overview](#overview)) are also duplicated along with it.   
-   
-You can exclude certain relations from being duplicated by using the `excludeRelations()` method in your definition of the `getDuplicateOptions()` method.   
-   
+By default, when duplicating a model, all of its "child" relations (see [Overview](#overview)) are also duplicated along with it.
+
+You can exclude certain relations from being duplicated by using the `excludeRelations()` method in your definition of the `getDuplicateOptions()` method.
+
 The relations specified in the `excludeRelations()` method will not be duplicated along with the targeted model, meaning that the newly duplicated model will not have any records associated to it for the specified relations.
 
 ```php
@@ -147,12 +133,12 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ##### Exclude certain columns from certain relations
 
-When duplicating a model, you can exclude certain columns of its "child" relations from being duplicated by using the `excludeRelationColumns()` method in your definition of the `getDuplicateOptions()` method.   
-   
-> This method accepts only one parameter which should be an associative array containing:   
->   **key** -> the name of a relation   
+When duplicating a model, you can exclude certain columns of its "child" relations from being duplicated by using the `excludeRelationColumns()` method in your definition of the `getDuplicateOptions()` method.
+
+> This method accepts only one parameter which should be an associative array containing:
+>   **key** -> the name of a relation
 >   **value** -> an array containing the columns to exclude for that relation
-   
+
 The fields specified in the `excludeRelationColumns()` method will be saved with their default value (`null`, `false`, `0`, etc.)
 
 ```php
@@ -173,13 +159,13 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ##### Specify unique columns for certain relations
 
-When duplicating a model, you can save certain columns of its "child" relations in an unique format by using the `uniqueRelationColumns()` method in your definition of the `getDuplicateOptions()` method.   
-   
-> This method accepts only one parameter which should be an associative array containing:   
->   **key** -> the name of a relation   
->   **value** -> an array containing the unique columns for that relation   
-   
-The fields specified in the `uniqueRelationColumns()` method will be saved in an unique format by appending `(n)` at the end.   
+When duplicating a model, you can save certain columns of its "child" relations in an unique format by using the `uniqueRelationColumns()` method in your definition of the `getDuplicateOptions()` method.
+
+> This method accepts only one parameter which should be an associative array containing:
+>   **key** -> the name of a relation
+>   **value** -> an array containing the unique columns for that relation
+
+The fields specified in the `uniqueRelationColumns()` method will be saved in an unique format by appending `(n)` at the end.
 Example: **original relation name (1)**, **original relation name (2)**
 
 ```php
@@ -200,8 +186,8 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ##### Duplicate only the targeted model
 
-If you only want to duplicate your targeted model without duplicating any relations whatsoever, you can specify this by using the `disableDeepDuplication()` method in your definition of the `getDuplicateOptions()` method.   
-   
+If you only want to duplicate your targeted model without duplicating any relations whatsoever, you can specify this by using the `disableDeepDuplication()` method in your definition of the `getDuplicateOptions()` method.
+
 When using this method, all relations of all types will be ignored when duplicating the model.
 
 ```php
@@ -219,8 +205,8 @@ public function getDuplicateOptions() : DuplicateOptions
 
 ### Events
 
-The duplicate functionality comes packed with two Eloquent events: `duplicating` and `duplicated`   
-   
+The duplicate functionality comes packed with two Eloquent events: `duplicating` and `duplicated`
+
 You can implement these events in your Eloquent models as you would implement any other Eloquent events that come with the Laravel framework.
 
 ```php
@@ -253,7 +239,7 @@ class YourModel extends Model
             // your logic here
         });
     }
-    
+
     /**
      * Get the options for duplicating the model.
      *
