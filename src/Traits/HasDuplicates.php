@@ -1,14 +1,14 @@
 <?php
 
-namespace Neurony\Duplicate\Traits;
+namespace Salla\Duplicate\Traits;
 
 use Closure;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Neurony\Duplicate\Helpers\RelationHelper;
-use Neurony\Duplicate\Options\DuplicateOptions;
+use Salla\Duplicate\Helpers\RelationHelper;
+use Salla\Duplicate\Options\DuplicateOptions;
 
 trait HasDuplicates
 {

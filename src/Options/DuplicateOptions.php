@@ -1,6 +1,6 @@
 <?php
 
-namespace Neurony\Duplicate\Options;
+namespace Salla\Duplicate\Options;
 
 use Exception;
 use Illuminate\Support\Arr;

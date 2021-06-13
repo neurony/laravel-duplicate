@@ -1,5 +1,5 @@
 {
-    "name": "neurony/laravel-duplicate",
+    "name": "salla/laravel-duplicate",
     "description": "Duplicate any Eloquent model along with its underlying relationships",
     "license": "MIT",
     "keywords": [
@@ -22,22 +22,22 @@
     ],
     "require": {
         "php": "^7.2.5",
-        "illuminate/contracts": "^7.0",
-        "illuminate/support": "^7.0",
-        "illuminate/database": "^7.0"
+        "illuminate/contracts": "^8.0",
+        "illuminate/support": "^8.0",
+        "illuminate/database": "^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5",
-        "orchestra/testbench": "^5.0"
+        "phpunit/phpunit": "^9",
+        "orchestra/testbench": "^6"
     },
     "autoload": {
         "psr-4": {
-            "Neurony\\Duplicate\\": "src/"
+            "Salla\\Duplicate\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Neurony\\Duplicate\\Tests\\": "tests"
+            "Salla\\Duplicate\\Tests\\": "tests"
         },
         "classmap": [
             "tests/TestCase.php"

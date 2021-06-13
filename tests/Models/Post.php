@@ -1,6 +1,6 @@
 <?php
 
-namespace Neurony\Duplicate\Tests\Models;
+namespace Salla\Duplicate\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Neurony\Duplicate\Options\DuplicateOptions;

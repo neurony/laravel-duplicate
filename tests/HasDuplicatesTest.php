@@ -2,11 +2,11 @@
 
 namespace Neurony\Duplicate\Tests;
 
-use Neurony\Duplicate\Options\DuplicateOptions;
-use Neurony\Duplicate\Tests\Models\Comment;
-use Neurony\Duplicate\Tests\Models\Post;
-use Neurony\Duplicate\Tests\Models\Review;
-use Neurony\Duplicate\Tests\Models\Tag;
+use Salla\Duplicate\Options\DuplicateOptions;
+use Salla\Duplicate\Tests\Models\Comment;
+use Salla\Duplicate\Tests\Models\Post;
+use Salla\Duplicate\Tests\Models\Review;
+use Salla\Duplicate\Tests\Models\Tag;
 
 class HasDuplicatesTest extends TestCase
 {

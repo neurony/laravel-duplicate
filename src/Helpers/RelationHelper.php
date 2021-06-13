@@ -1,6 +1,6 @@
 <?php
 
-namespace Neurony\Duplicate\Helpers;
+namespace Salla\Duplicate\Helpers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
