@@ -15,16 +15,16 @@
     "prefer-stable": true,
     "authors": [
         {
-            "name": "Andrei Badea",
-            "email": "zbiller@gmail.com",
+            "name": "Dzung Nguyen",
+            "email": "dungnh@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "illuminate/contracts": "^8.0",
-        "illuminate/support": "^8.0",
-        "illuminate/database": "^8.0"
+        "illuminate/contracts": "^8.0 || ^9.0",
+        "illuminate/support": "^8.0 || ^9.0",
+        "illuminate/database": "^8.0 || ^9.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",
