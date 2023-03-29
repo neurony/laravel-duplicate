@@ -1,4 +1,4 @@
-### This is fork from Neurony/laravel-duplicate to make it works with new Laravel 8.x
+### This is fork from Neurony/laravel-duplicate to make it works with new Laravel 10.x
 
 ---
 
